@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Emperador - Bebidas</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #DDC5A1;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EEDEB8;
+            padding: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header img {
+            height: 80px; /* Agrandar el logo */
+        }
+        header div a {
+            margin-right: 20px;
+            font-weight: 700; /* Negrita */
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        header div button {
+            margin-right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        header div img {
+            height: 40px;
+            border-radius: 50%;
+        }
+        main {
+            padding: 20px;
+        }
+        .back-button {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .back-button img {
+            margin-right: 10px;
+        }
+        h1 {
+            font-size: 100px; /* Tamaño más grande */
+            font-weight: 700; /* Negrita */
+            margin: 0 0 20px;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons .loaded {
+            background-color: #000;
+            color: #fff;
+        }
+        .buttons .new {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+        
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #DDC5A1;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .item img {
+            height: 100px;
+            border-radius: 8px;
+        }
+        .item-description {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .item-price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-control input {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #F7F7F7;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+        .quantity-control button {
+            background-color: #FFFFFF;
+            border: 1px solid #F7F7F7;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .submit-button {
+            display: block;
+            margin: 0 auto;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+      <header>
+         <div>
+                <img src="logo.png" alt="Logo"> <!-- Agrandar el logo -->
+                <span>EL EMPERADOR</span>
+            </div>
+            <div>
+                <a href="#">Mesas</a>
+                <a href="#">Pedidos</a>
+                <button>Perfil</button>
+                <img src="icon_perfil_usuario1.png" alt="Perfil">
+            </div>
+        </header>
+        <main>
+    <div class="content">
+        <h1>Bebidas</h1>
+        <h2>Bebidas con Alcohol</h2>
+        <div class="item">
+            <img src="fernet.png" alt="Fernet">
+            <div class="item-description">
+                <div class="item-price">Fernet 1/2 - $4500</div>
+            </div>
+            <div class="quantity-control">
+                <button>-</button>
+                <input type="text" value="0">
+                <button>+</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="gancia.png" alt="Gancia">
+            <div class="item-description">
+                <div class="item-price">Gancia - $4500</div>
+            </div>
+            <div class="quantity-control">
+                <button>-</button>
+                <input type="text" value="0">
+                <button>+</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="gintonic.png" alt="Gin Tonic">
+            <div class="item-description">
+                <div class="item-price">gin tonic - $6000</div>
+            </div>
+            <div class="quantity-control">
+                <button>-</button>
+                <input type="text" value="0">
+                <button>+</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="cerveza.png" alt="Cerveza">
+            <div class="item-description">
+                <div class="item-price">cerveza - $2000</div>
+            </div>
+            <div class="quantity-control">
+                <button>-</button>
+                <input type="text" value="0">
+                <button>+</button>
+            </div>
+        </div>
+        <button class="submit-button">GUARDAR PEDIDO</button>
+    </div>
+</body>
+</html>

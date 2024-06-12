@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Emperador - Iniciar Sesión</title>
+    <style>
+        body {
+            background-color: #d2b48c;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 0;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="email"], input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 320px;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .create-user {
+            width: 320px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .terms {
+            font-size: 12px;
+            color: gray;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="El Emperador Logo">
+        </div>
+        <h1>INICIAR SESION</h1>
+        <p>Ingresa su email y contraseña para acceder a la aplicación</p>
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Correo Electronico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">acceder</button>
+        </form>
+        <a href="/olvide-mi-contrasena">¿olvidaste tu contraseña?</a><br>
+        <a class="create-user" href="/crear-cuenta">Crear usuario</a><br>
+        <a href="/crear-cuenta">¿no tiene cuenta? crear una</a>
+        <p class="terms">By clicking continue, you agree to our <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a></p>
+    </div>
+</body>
+</html>
