@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><strong>Menú del Día</strong></title> <!-- Agrandar y poner en negrita -->
+    <title><strong>Menú del Día</strong></title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -21,11 +21,11 @@
             border-bottom: 2px solid #ddd;
         }
         header img {
-            height: 80px; /* Agrandar el logo */
+            height: 80px;
         }
         header div a {
             margin-right: 20px;
-            font-weight: 700; /* Negrita */
+            font-weight: 700;
             text-decoration: none;
             color: #000;
             font-weight: bold;
@@ -51,13 +51,14 @@
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            cursor: pointer;
         }
         .back-button img {
             margin-right: 10px;
         }
         h1 {
-            font-size: 100px; /* Tamaño más grande */
-            font-weight: 700; /* Negrita */
+            font-size: 100px;
+            font-weight: 700;
             margin: 0 0 20px;
         }
         .buttons {
@@ -88,7 +89,7 @@
             background-color: #DDC5A1;
         }
         .menu-item img {
-            max-width: 200px; /* Agrandar imagen */
+            max-width: 200px;
             height: auto;
             margin-right: 20px;
         }
@@ -127,116 +128,143 @@
 <body>
     <header>
         <div>
-            <img src="LogoSample_ByTailorBrands-removebg-preview_(1)-transformed.png" alt="Logo"> <!-- Agrandar el logo -->
-            <span>EL EMPERADOR</span>
+            <img src="icono.ico" alt="Logo">
+            <span>SOSNEADO</span>
         </div>
         <div>
-            <a href="#">Mesas</a>
-            <a href="#">Pedidos</a>
-            <button>Perfil</button>
-            <img src="icon_perfil_usuario1.png" alt="Perfil">
+            <a href="#" onclick="navigateToSection('mesas')">Mesas</a>
+            <a href="#" onclick="navigateToSection('pedidos')">Pedidos</a>
+            <button onclick="openProfile()">Perfil</button>
+            <img src="icon_perfil_usuario1.png" alt="Perfil" onclick="openProfile()">
         </div>
     </header>
     <main>
-        <div class="back-button">
+        <div class="back-button" onclick="goBack()">
             <img src="flecha_volver.png" alt="Volver" style="width: 30px;">
+            <span>Volver</span>
         </div>
-        <h1>Menú del Día</h1> <!-- Agrandar y poner en negrita -->
+        <h1>Menú del Día</h1>
         <div class="buttons">
-            <button class="loaded">Menú Cargado</button>
-            <button class="new">Nuevo</button>
+            <button class="loaded" onclick="menuLoaded()">Menú Cargado</button>
+            <button class="new" onclick="addNewItem()">Nuevo</button>
         </div>
-        <section>
-            <!-- Ejemplo de un ítem del menú -->
+        <section id="menu-section">
             <div class="menu-item">
                 <img src="risotto_de_champi.png" alt="Comida 1">
                 <div>
                     <h3>Risotto de Champiñones Trufado - $7,600</h3>
                     <p>Cremoso risotto de arroz Arborio con una mezcla de champiñones portobello y shiitake, infusionado con aceite de trufa y queso parmesano rallado. Acompañado de una ramita de tomillo fresco.</p>
                     <div class="availability">
-                        <button class="available">Disponible</button>
-                        <button class="unavailable">No Disponible</button>
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
                     </div>
                 </div>
             </div>
-            <!-- Ejemplo de otro ítem del menú -->
             <div class="menu-item">
                 <img src="pastas_al_pesto.png" alt="Comida 2">
                 <div>
                     <h3>Pasta al Pesto - $6,800</h3>
                     <p>Deliciosa pasta italiana servida con una salsa pesto casera elaborada con albahaca fresca, piñones, ajo, queso parmesano y aceite de oliva virgen extra. Acompañada de tomates cherry asados y hojas de albahaca para decorar.</p>
                     <div class="availability">
-                        <button class="available">Disponible</button>
-                        <button class="unavailable">No Disponible</button>
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
                     </div>
-    </div>
-</div>
-      <!-- Ejemplo de otro ítem del menú -->
-      <div class="menu-item">
-        <img src="pollo a la parrilla con limon y hierbas.png" alt="Comida 3">
-        <div>
-            <h3>Pollo a la parrilla con limón y hierbas - $7,100</h3>
-            <p>Pechuga de pollo marinada en jugo de limón, ajo y hierbas frescas, asada a la perfección y servida con una guarnición de espárragos al vapor y puré de papas cremoso.</p>
-            <div class="availability">
-                <button class="available">Disponible</button>
-                <button class="unavailable">No Disponible</button>
+                </div>
             </div>
-</div>
-</div>
-</div>
-<!-- Ejemplo de otro ítem del menú -->
-<div class="menu-item">
-  <img src="ensalada cesar con camarones.png" alt="Comida 4">
-  <div>
-      <h3>Ensalada César con Camarones - $5,700</h3>
-      <p>Camarones a la parrilla servidos sobre una cama de lechuga romana crujiente, con crutones de ajo, queso parmesano rallado y aderezo César casero.</p>
-      <div class="availability">
-          <button class="available">Disponible</button>
-          <button class="unavailable">No Disponible</button>
-      </div>
-</div>
-</div>
-<!-- Ejemplo de otro ítem del menú -->
-<div class="menu-item">
-    <img src="lasaña de berenjena y ricota.png" alt="Comida 5">
-    <div>
-        <h3>Lasaña de Berenjena y Ricotta- $6,600</h3>
-        <p>Capas de berenjena asada, ricotta cremosa, espinacas frescas y salsa marinara casera, horneadas con queso mozzarella fundido y albahaca fresca.</p>
-        <div class="availability">
-            <button class="available">Disponible</button>
-            <button class="unavailable">No Disponible</button>
-        </div>
-  </div>
-  </div>
-  <!-- Ejemplo de otro ítem del menú -->
-<div class="menu-item">
-    <img src="hamburguesa gourmet de cordero.png" alt="Comida 6">
-    <div>
-        <h3>Hamburguesa Gourmet de Cordero- $7,600</h3>
-        <p>Jugosa hamburguesa de cordero condimentada con especias mediterráneas, servida en un pan brioche tostado con queso feta, rodajas de tomate, cebolla caramelizada y salsa tzatziki.</p>
-        <div class="availability">
-            <button class="available">Disponible</button>
-            <button class="unavailable">No Disponible</button>
-        </div>
-  </div>
-  </div>
-  <div class="menu-item">
-    <img src="tarta de manzana con helado de vainilla.png" alt="Comida 7">
-    <div>
-        <h3>Tarta de Manzana con Helado de Vainilla- $3,500</h3>
-        <p>Tarta de manzana casera con una corteza dorada y crujiente, rellena de manzanas especiadas con canela y azúcar morena, servida caliente con una bola de helado de vainilla.</p>
-        <div class="availability">
-            <button class="available">Disponible</button>
-            <button class="unavailable">No Disponible</button>
-        </div>
-  </div>
-  </div>
-
-            <!-- Más ítems del menú según tu diseño -->
-            <!-- ... -->
+            <div class="menu-item">
+                <img src="pollo a la parrilla con limon y hierbas.png" alt="Comida 3">
+                <div>
+                    <h3>Pollo a la parrilla con limón y hierbas - $7,100</h3>
+                    <p>Pechuga de pollo marinada en jugo de limón, ajo y hierbas frescas, asada a la perfección y servida con una guarnición de espárragos al vapor y puré de papas cremoso.</p>
+                    <div class="availability">
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="ensalada cesar con camarones.png" alt="Comida 4">
+                <div>
+                    <h3>Ensalada César con Camarones - $5,700</h3>
+                    <p>Camarones a la parrilla servidos sobre una cama de lechuga romana crujiente, con crutones de ajo, queso parmesano rallado y aderezo César casero.</p>
+                    <div class="availability">
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="lasaña de berenjena y ricota.png" alt="Comida 5">
+                <div>
+                    <h3>Lasaña de Berenjena y Ricotta - $6,600</h3>
+                    <p>Capas de berenjena asada, ricotta cremosa, espinacas frescas y salsa marinara casera, horneadas con queso mozzarella fundido y albahaca fresca.</p>
+                    <div class="availability">
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="hamburguesa gourmet de cordero.png" alt="Comida 6">
+                <div>
+                    <h3>Hamburguesa Gourmet de Cordero - $7,600</h3>
+                    <p>Jugosa hamburguesa de cordero condimentada con especias mediterráneas, servida en un pan brioche tostado con queso feta, rodajas de tomate, cebolla caramelizada y salsa tzatziki.</p>
+                    <div class="availability">
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="tarta de manzana con helado de vainilla.png" alt="Comida 7">
+                <div>
+                    <h3>Tarta de Manzana con Helado de Vainilla - $3,500</h3>
+                    <p>Tarta de manzana casera con una corteza dorada y crujiente, rellena de manzanas especiadas con canela y nuez moscada, servida caliente con una bola de helado de vainilla.</p>
+                    <div class="availability">
+                        <button class="available" onclick="setAvailability(this, true)">Disponible</button>
+                        <button class="unavailable" onclick="setAvailability(this, false)">No Disponible</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    <script>
+        function navigateToSection(section) {
+            alert('Navegar a la sección: ' + section);
+            // Aquí iría la lógica para navegar a la sección correspondiente
+        }
+
+        function openProfile() {
+            alert('Abrir perfil del usuario');
+            // Aquí iría la lógica para abrir el perfil del usuario
+        }
+
+        function goBack() {
+            alert('Volver a la página anterior');
+            // Aquí iría la lógica para volver a la página anterior
+        }
+
+        function menuLoaded() {
+            alert('El menú del día ha sido cargado');
+            // Aquí iría la lógica para manejar la carga del menú
+        }
+
+        function addNewItem() {
+            alert('Agregar un nuevo ítem al menú');
+            // Aquí iría la lógica para agregar un nuevo ítem al menú
+        }
+
+        function setAvailability(button, isAvailable) {
+            let item = button.closest('.menu-item');
+            if (isAvailable) {
+                alert('El ítem ' + item.querySelector('h3').textContent + ' está disponible');
+                // Aquí iría la lógica para marcar el ítem como disponible
+            } else {
+                alert('El ítem ' + item.querySelector('h3').textContent + ' no está disponible');
+                // Aquí iría la lógica para marcar el ítem como no disponible
+            }
+        }
+    </script>
 </body>
 </html>
 
-       

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Emperador - Iniciar Sesión</title>
+    <title>GENERANDO SONRISAS - Iniciar Sesión</title>
     <style>
         body {
             background-color: #d2b48c;
@@ -84,11 +84,11 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="LogoSample_ByTailorBrands-removebg-preview_(1)-transformed.png" alt="El Emperador Logo">
+            <img src="icono.ico" alt="SOSNEADO Logo">
         </div>
         <h1>INICIAR SESION</h1>
         <p>Ingresa su email y contraseña para acceder a la aplicación</p>
-        <form action="/login" method="POST">
+        <form id="loginForm" action="/login" method="POST">
             <input type="email" name="email" placeholder="Correo Electronico" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <button type="submit">acceder</button>
@@ -96,7 +96,17 @@
         <a href="/olvide-mi-contrasena">¿olvidaste tu contraseña?</a><br>
         <a class="create-user" href="/crear-cuenta">Crear usuario</a><br>
         <a href="/crear-cuenta">¿no tiene cuenta? crear una</a>
-        <p class="terms">By clicking continue, you agree to our <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a></p>
+        <p class="terms">Al hacer clic en continuar, aceptas nuestros <a href="/terms-of-service">Términos de servicio</a> y <a href="/privacy-policy">Política de privacidad</a></p>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            var email = document.querySelector('input[name="email"]').value;
+            var password = document.querySelector('input[name="password"]').value;
+            if (email === "" || password === "") {
+                alert("Por favor, complete todos los campos.");
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
